@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==========================================================
+     À MODIFIER : tout ce qui est entre [crochets].
+     Cherchez les commentaires « MODIFIER » dans le fichier.
+     ========================================================== -->
+
+<title>Alexandre Romanini — Etudiant Ingénieur à l'INSA Rennes</title>
+<meta name="description" content="[Une phrase : ce que vous faites et pour qui. Ce texte s'affiche dans Google et sur les réseaux.]">
+
+<!-- Aperçu quand on partage le lien -->
+<meta property="og:title" content="Alexandre Romanini — Etudiant Ingénieur à l'INSA Rennes">
+<meta property="og:description" content="[La même phrase que ci-dessus.]">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://[votrepseudo].github.io">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink:    #0E1A2B;
+  --ink-2:  #142339;
+  --paper:  #EEF2F7;
+  --muted:  #8DA2BE;
+  --amber:  #F0A44A;
+  --line:   rgba(141, 162, 190, .22);
+
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body:    "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: min(72rem, 100% - 3rem);
+  margin-inline: auto;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--amber);
+  color: var(--ink);
+  padding: .6rem 1rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+  text-decoration: none;
+}
+
+/* ---------- En-tête ---------- */
+
+.hero {
+  padding-block: clamp(5rem, 14vw, 9rem) clamp(4rem, 10vw, 7rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 2rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow span { color: var(--amber); }
+
+.statement {
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  line-height: .98;
+  letter-spacing: -.03em;
+}
+.statement em {
+  font-style: normal;
+  color: var(--amber);
+}
+
+.intro {
+  margin: 2.25rem 0 0;
+  max-width: 48ch;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.links {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 2rem;
+  font-family: var(--mono);
+  font-size: .875rem;
+}
+.links a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: border-color .2s, color .2s;
+}
+.links a:hover { color: var(--amber); border-color: var(--amber); }
+
+/* ---------- Sections ---------- */
+
+.section { padding-block: clamp(3.5rem, 9vw, 6rem); }
+.section + .section { border-top: 1px solid var(--line); }
+
+.section-title {
+  margin: 0 0 3rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Projets ---------- */
+
+.projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+
+.project {
+  position: relative;
+  background: var(--ink);
+  padding: 2.25rem 0 2.25rem 1.75rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 2.5rem;
+  align-items: start;
+  transition: background .25s;
+}
+
+/* Le trait ambré qui se remplit : la signature de la page */
+.project::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  width: 3px;
+  background: var(--amber);
+  transition: top .35s cubic-bezier(.2,.8,.2,1), bottom .35s cubic-bezier(.2,.8,.2,1);
+}
+.project:hover,
+.project:focus-within { background: var(--ink-2); }
+.project:hover::before,
+.project:focus-within::before { top: 0; bottom: 0; }
+
+.project-year {
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--muted);
+  padding-top: .55rem;
+}
+
+.project-title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+.project-title a { text-decoration: none; }
+
+.project-desc {
+  margin: .75rem 0 0;
+  max-width: 52ch;
+  color: var(--muted);
+}
+
+.stack {
+  margin: 1.1rem 0 0;
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--muted);
+}
+.stack span::after {
+  content: " / ";
+  color: var(--line);
+}
+.stack span:last-child::after { content: ""; }
+
+.project-links {
+  margin: 1.1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+}
+.project-links a {
+  text-decoration: none;
+  color: var(--amber);
+}
+.project-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Compétences ---------- */
+
+.skills {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2.5rem;
+}
+.skills dt {
+  font-family: var(--mono);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: .6rem;
+}
+.skills dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Pied de page ---------- */
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 3rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--muted);
+}
+.footer a { color: var(--amber); text-decoration: none; }
+.footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 40rem) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    padding-left: 1.25rem;
+  }
+  .project-year { padding-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#projets">Aller aux projets</a>
+
+<header class="hero">
+  <div class="wrap">
+
+    <!-- MODIFIER : votre nom et votre intitulé -->
+    <p class="eyebrow">[Prénom Nom] <span>—</span> [Développeur front-end]</p>
+
+    <!-- MODIFIER : ce que vous construisez, en une phrase.
+         Le mot entre <em> ressort en ambre : choisissez-le bien. -->
+    <h1 class="statement">Je construis des <em>interfaces</em> claires et rapides.</h1>
+
+    <!-- MODIFIER : deux ou trois lignes. Qui vous êtes, ce que vous
+         cherchez (alternance, stage, poste, freelance), où vous êtes. -->
+    <p class="intro">
+      [Actuellement en formation à … , je cherche une alternance à partir de …
+      Je travaille surtout en JavaScript et je m'intéresse à l'accessibilité et
+      à la performance web.]
+    </p>
+
+    <!-- MODIFIER : vos liens. Supprimez les lignes inutiles. -->
+    <ul class="links">
+      <li><a href="https://github.com/[votrepseudo]">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/[votre-profil]">LinkedIn</a></li>
+      <li><a href="mailto:[vous@exemple.fr]">[vous@exemple.fr]</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= PROJETS ================= -->
+  <section class="section" id="projets">
+    <div class="wrap">
+      <h2 class="section-title">Projets</h2>
+
+      <ol class="projects">
+
+        <!-- MODIFIER : dupliquez ce bloc <li> pour chaque projet.
+             Mettez le plus impressionnant en premier, pas le plus récent. -->
+        <li class="project">
+          <span class="project-year">2026</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
+            </h3>
+            <p class="project-desc">
+              [Une ou deux phrases : à quoi ça sert et quel problème ça résout.
+              Dites ce que vous avez construit vous-même, pas ce que le
+              framework fait.]
+            </p>
+            <p class="stack">
+              <span>React</span><span>TypeScript</span><span>Vite</span>
+            </p>
+            <p class="project-links">
+              <a href="https://[votrepseudo].github.io/[nom-du-depot]/">Voir la démo</a>
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <span class="project-year">2025</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
+            </h3>
+            <p class="project-desc">
+              [Description du deuxième projet.]
+            </p>
+            <p class="stack">
+              <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <span class="project-year">2025</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
+            </h3>
+            <p class="project-desc">
+              [Description du troisième projet.]
+            </p>
+            <p class="stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </p>
+            <p class="project-links">
+              <a href="https://[votrepseudo].github.io/[nom-du-depot]/">Voir la démo</a>
+              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= COMPÉTENCES ================= -->
+  <section class="section" id="competences">
+    <div class="wrap">
+      <h2 class="section-title">Compétences</h2>
+
+      <!-- MODIFIER : ne listez que ce que vous savez vraiment utiliser.
+           Une liste courte et honnête vaut mieux qu'une liste longue. -->
+      <dl class="skills">
+        <div>
+          <dt>Langages</dt>
+          <dd>[JavaScript, TypeScript, Python, SQL]</dd>
+        </div>
+        <div>
+          <dt>Front-end</dt>
+          <dd>[React, CSS moderne, accessibilité, tests]</dd>
+        </div>
+        <div>
+          <dt>Back-end &amp; outils</dt>
+          <dd>[Node.js, PostgreSQL, Git, Docker]</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap footer">
+  <p>Alexandre ROMANINI — Rennes, France</p>
+  <!-- MODIFIER : votre adresse e-mail -->
+  <p>Écrivez-moi : <a href="mailto:alexandreromanini35@protonmail.com">[alexandreromanini35@protonmail.com]</a></p>
+</footer>
+
+</body>
+</html>
