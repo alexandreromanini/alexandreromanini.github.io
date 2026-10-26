@@ -1,10 +1,10 @@
-# Bonjour, moi c'est Alexandre 👋
+# Salut, je m'appelle Alexandre 👋
 
-Élève ingénieur en 2e année d'informatique (option IA) à l'INSA Rennes, je m'intéresse tout particulièrement à l'intelligence artificielle, à la réalité virtuelle et à l'automatisation.
-
-**Je cherche** un stage technique de 2 mois entre juillet et septembre 2027.
+J'ai 21 ans et je suis élève ingénieur en 2e année d'informatique (option IA) à l'INSA Rennes. Je m'intéresse tout particulièrement à l'intelligence artificielle, à la réalité virtuelle et à l'automatisation.
 
 **Je pars** au Brésil pour ma mobilité internationale, à l'UFSC (février – juin 2027).
+
+**Je cherche** un stage technique de 2 mois entre juillet et septembre 2027 à mon retour du Brésil.
 
 ---
 
@@ -22,6 +22,15 @@
 | [**Doodle Jump Agent**](https://github.com/alexandreromanini/DoodleJumpAgent) | Planificateur à physique exacte (101 k de moyenne, 23× l'aléatoire) comparé à un agent PPO (12 k), sur un jeu tiers aux règles inchangées | Python, Gymnasium, Stable-Baselines3, PyTorch, NumPy, Pygame |
 | [**Interactions par le regard en VR**](https://github.com/alexandreromanini/DEPOT) | Humains virtuels réagissant au regard de l'utilisateur | Unreal Engine 5, C++, Blueprints |
 | [**Veille automatisée d'offres de stage**](https://github.com/alexandreromanini/DEPOT) | Agrégation de 4 API d'offres, filtrage et récapitulatif quotidien par mail | Python |
+
+## Développés avec l'IA
+
+Je conçois, je spécifie et je teste ; l'IA m'aide à écrire le code. Voici quelques logiciels complets construits de cette façon :
+
+| Projet | Description | Stack |
+|---|---|---|
+| [**PDFManager**](https://github.com/alexandreromanini/PDFManager) | Éditeur PDF gratuit et hors ligne pour Windows : édition, annotations, signatures numériques, OCR, traduction DeepL, assistant IA local. Installeur et mises à jour automatiques | Python, PySide6 (Qt), PyMuPDF, llama.cpp |
+| [**PDFManager-rs**](https://github.com/alexandreromanini/PDFManager-rs) | Réécriture du même logiciel en Rust : installeur 6× plus léger, démarrage plus rapide | Rust, Slint, MuPDF |
 
 ## Outils du quotidien
 
