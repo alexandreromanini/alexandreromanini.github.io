@@ -170,7 +170,9 @@ h2 {
   place-items: center;
 }
 .visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.visual.contain img { object-fit: contain; background: #fff; }
+/* GIF vertical du jeu : garde ses proportions d'origine au lieu d'être recadré */
+.visual.gif { aspect-ratio: auto; padding: 1.5rem; }
+.visual.gif img { width: auto; height: auto; max-width: 100%; max-height: 30rem; }
 
 /* Visuel typographique pour les projets sans capture */
 .visual .stand-in {
@@ -351,7 +353,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
       <ol class="work">
 
         <li>
-          <div class="visual contain">
+          <div class="visual gif">
             <img src="https://github.com/alexandreromanini/DoodleJumpAgent/raw/main/assets/demo.gif" alt="Le planificateur joue à Doodle Jump" loading="lazy">
           </div>
           <div>
