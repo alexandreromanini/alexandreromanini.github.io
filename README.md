@@ -35,4 +35,4 @@ J'en avais assez de payer des logiciels Windows pour des fonctions basiques, alo
 
 ## Me contacter
 
-[LinkedIn](www.linkedin.com/in/alexandre-romanini-308522364) · [Email](mailto:alexandreromanini35@protonmail.fr)
+[LinkedIn](https://www.linkedin.com/in/alexandre-romanini-308522364) · [Email](mailto:alexandreromanini35@protonmail.fr)
