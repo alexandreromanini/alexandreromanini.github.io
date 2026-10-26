@@ -387,7 +387,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
             <p class="story">
               J'ai branché deux agents sur un Doodle Jump existant sans toucher à ses règles :
               un planificateur qui simule la physique exacte du jeu, et un agent PPO qui apprend
-              sans la connaître.
+              sans la connaître. Le planificateur gagne d'un facteur 9, et j'ai cherché pourquoi.
             </p>
             <p class="metric">101 k de score moyen, soit 23 fois un agent aléatoire</p>
             <p class="stack">Python, Gymnasium, Stable-Baselines3, PyTorch, NumPy</p>
@@ -428,6 +428,25 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
             <p class="metric">Récapitulatif hebdomadaire par mail, sans doublons</p>
             <p class="stack">Python, SQLite, systemd</p>
             <a class="open" href="https://github.com/alexandreromanini/veille-stages">Voir le projet</a>
+          </div>
+        </li>
+
+        <li>
+          <div class="visual gif">
+            <img src="https://github.com/alexandreromanini/WeightTracking/raw/main/docs/screenshots/accueil.png" alt="Écran d'accueil de l'application : dernière charge, record et 1RM estimé pour chaque exercice" loading="lazy">
+          </div>
+          <div>
+            <p class="kind">Web app (PWA), projet perso</p>
+            <h3>WeightTracking</h3>
+            <p class="story">
+              Je n'arrivais jamais à me souvenir des charges soulevées à la séance précédente,
+              alors j'ai construit une appli de musculation qui les affiche en grand. Elle compare
+              chaque séance à l'historique et signale les nouveaux records.
+            </p>
+            <p class="metric">876 exercices, fonctionne hors ligne, sans compte</p>
+            <p class="stack">React, TypeScript, Dexie (IndexedDB), Tailwind CSS, Vitest</p>
+            <a class="open" href="https://weight-tracking-tau.vercel.app">Essayer l'appli</a>
+            <a class="open" href="https://github.com/alexandreromanini/WeightTracking" style="margin-left: 1.25rem">Voir le projet</a>
           </div>
         </li>
 
