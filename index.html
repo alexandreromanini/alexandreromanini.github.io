@@ -135,12 +135,16 @@ h1 {
 }
 .facts dt { font-size: .8rem; color: var(--faint); margin-bottom: .25rem; }
 .facts dd { margin: 0; font-size: .98rem; }
+/* La recherche de stage ressort parmi les trois infos */
+.facts .seeking { padding-left: 1rem; border-left: 3px solid var(--pen); }
+.facts .seeking dt { color: var(--pen); font-weight: 600; }
+.facts .seeking dd { font-size: 1.1rem; font-weight: 600; }
 
 /* ---------- Sections ---------- */
 
-.section { padding-block: clamp(4rem, 9vw, 6.5rem); }
+.section { padding-block: clamp(2.5rem, 5vw, 3.75rem); }
 
-.section-head { margin-bottom: 3rem; max-width: 40rem; }
+.section-head { margin-bottom: 2rem; max-width: 40rem; }
 h2 {
   margin: 0;
   font-family: var(--display);
@@ -160,7 +164,7 @@ h2 {
   grid-template-columns: 1.15fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
-  padding-block: 2.5rem;
+  padding-block: 2rem;
   border-top: 1px solid var(--rule);
 }
 .work > li:nth-child(even) .visual { order: 2; }
@@ -273,7 +277,7 @@ figure.visual figcaption { font-size: .75rem; color: var(--faint); text-align: c
 
 /* ---------- Contact ---------- */
 
-.contact { padding-block: clamp(4rem, 9vw, 6.5rem); border-top: 1px solid var(--rule); }
+.contact { padding-block: clamp(2.5rem, 5vw, 3.75rem); border-top: 1px solid var(--rule); }
 .contact h2 { max-width: 16ch; }
 .contact .mail {
   display: inline-block;
@@ -352,7 +356,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
 
     <div class="wrap">
       <dl class="facts">
-        <div><dt>Je cherche</dt><dd>Un stage technique de 2 mois, juillet à septembre 2027</dd></div>
+        <div class="seeking"><dt>Je cherche</dt><dd>Un stage technique de 2 mois, de juillet à septembre 2027</dd></div>
         <div><dt>Février à juin 2027</dt><dd>Mobilité à l'UFSC, au Brésil</dd></div>
         <div><dt>Basé à</dt><dd>Rennes, France</dd></div>
       </dl>
@@ -473,7 +477,8 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
     </div>
   </section>
 
-  <!-- ================= MÉTHODE ================= -->
+  <!-- Section « Comment je travaille » retirée pour l'instant
+   ================= MÉTHODE ================= 
   <section class="section" id="methode">
     <div class="wrap">
       <div class="section-head">
@@ -496,6 +501,8 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
       </ul>
     </div>
   </section>
+
+  -->
 
   <!-- ================= PARCOURS ================= -->
   <section class="section" id="parcours">
