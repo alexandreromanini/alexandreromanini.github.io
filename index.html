@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -26,7 +26,7 @@
   --panel: #E9E4D8;
   --pen:   #2F4FA8;
 
-  --display: "Fraunces", Georgia, serif;
+  --display: "Public Sans", "Helvetica Neue", Arial, sans-serif;
   --body:    "Public Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -67,7 +67,7 @@ a { color: inherit; }
   justify-content: space-between;
   height: 3.75rem;
 }
-.top .name { font-family: var(--display); font-size: 1.25rem; text-decoration: none; }
+.top .name { font-family: var(--display); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
 .top nav { display: flex; gap: 1.75rem; font-size: .9rem; }
 .top nav a { text-decoration: none; color: var(--soft); }
 .top nav a:hover { color: var(--ink); }
@@ -85,10 +85,10 @@ a { color: inherit; }
 h1 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  font-weight: 800;
+  font-size: clamp(3rem, 8.5vw, 6rem);
   line-height: .95;
-  letter-spacing: -.02em;
+  letter-spacing: -.035em;
 }
 
 .tagline {
@@ -141,10 +141,10 @@ h1 {
 h2 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4.2vw, 2.8rem);
   line-height: 1.05;
-  letter-spacing: -.01em;
+  letter-spacing: -.025em;
 }
 .section-head p { margin: .75rem 0 0; color: var(--soft); }
 
@@ -173,6 +173,8 @@ h2 {
 /* GIF vertical du jeu : garde ses proportions d'origine au lieu d'être recadré */
 .visual.gif { aspect-ratio: auto; padding: 1.5rem; }
 .visual.gif img { width: auto; height: auto; max-width: 100%; max-height: 30rem; }
+figure.visual { margin: 0; gap: .6rem; }
+figure.visual figcaption { font-size: .75rem; color: var(--faint); text-align: center; }
 
 /* Visuel typographique pour les projets sans capture */
 .visual .stand-in {
@@ -188,14 +190,15 @@ h2 {
 .work h3 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
   line-height: 1.1;
+  letter-spacing: -.02em;
 }
 .work p.story { margin: .9rem 0 0; color: var(--soft); max-width: 40ch; }
 .work .metric { margin: 1rem 0 0; font-size: .9rem; font-weight: 500; }
 .work .stack { margin: .9rem 0 0; font-size: .82rem; color: var(--faint); }
-.work .open {
+.open {
   display: inline-block;
   margin-top: 1.1rem;
   font-weight: 500;
@@ -216,9 +219,7 @@ h2 {
   gap: 2rem;
 }
 .tools li { border-top: 1px solid var(--ink); padding-top: 1rem; }
-.tools h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.45rem; }
-.tools h3 a { text-decoration: none; }
-.tools h3 a:hover { color: var(--pen); }
+.tools h3 { margin: 0; font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: -.01em; }
 .tools p { margin: .5rem 0 0; color: var(--soft); font-size: .97rem; }
 .tools .stack { font-size: .82rem; color: var(--faint); }
 
@@ -232,7 +233,7 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 }
-.principles h3 { margin: 0 0 .5rem; font-family: var(--display); font-weight: 400; font-size: 1.45rem; }
+.principles h3 { margin: 0 0 .5rem; font-family: var(--display); font-weight: 700; font-size: 1.3rem; letter-spacing: -.01em; }
 .principles p { margin: 0; color: var(--soft); }
 
 /* ---------- Parcours ---------- */
@@ -407,9 +408,10 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
         </li>
 
         <li>
-          <div class="visual">
-            <p class="stand-in">Pourquoi le réseau<br>a-t-il décidé ça ?</p>
-          </div>
+          <figure class="visual gif">
+            <img src="images/cxai.png" alt="Un husky classé « loup » à cause de la neige : l'explication montre que le modèle regarde le fond, pas l'animal" loading="lazy">
+            <figcaption>Illustration : Ribeiro et al., « Why Should I Trust You? », 2016</figcaption>
+          </figure>
           <div>
             <p class="kind">IA explicable · en cours</p>
             <h3>C-XAI</h3>
@@ -435,19 +437,22 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
 
       <ul class="tools">
         <li>
-          <h3><a href="https://github.com/alexandreromanini/PDFManager">PDFManager</a></h3>
+          <h3>PDFManager</h3>
           <p>Éditeur PDF gratuit et hors ligne, pensé pour remplacer Acrobat Pro : annotations, signatures numériques, OCR, traduction DeepL et assistant IA local.</p>
           <p class="stack">Python · PySide6 · PyMuPDF · llama.cpp</p>
+          <a class="open" href="https://github.com/alexandreromanini/PDFManager">Voir le projet</a>
         </li>
         <li>
-          <h3><a href="https://github.com/alexandreromanini/PDFManager-rs">PDFManager-rs</a></h3>
+          <h3>PDFManager-rs</h3>
           <p>Le même logiciel réécrit en Rust, avec un installeur 6× plus léger et un démarrage plus rapide.</p>
           <p class="stack">Rust · Slint · MuPDF</p>
+          <a class="open" href="https://github.com/alexandreromanini/PDFManager-rs">Voir le projet</a>
         </li>
         <li>
-          <h3><a href="https://github.com/alexandreromanini/CleanLite">CleanLite</a></h3>
+          <h3>CleanLite</h3>
           <p>Nettoyeur Windows prudent inspiré de CCleaner, avec une liste blanche stricte des chemins et un mode simulation par défaut.</p>
           <p class="stack">Python · tkinter · PowerShell</p>
+          <a class="open" href="https://github.com/alexandreromanini/CleanLite">Voir le projet</a>
         </li>
       </ul>
     </div>
