@@ -7,7 +7,6 @@
 <title>Alexandre Romanini, élève ingénieur à l'INSA Rennes</title>
 <meta name="description" content="Élève ingénieur en informatique (option IA) à l'INSA Rennes, je travaille sur des projets d'IA, de réalité virtuelle et d'automatisation. Je cherche un stage de 2 mois entre juillet et septembre 2027.">
 
-<!-- Aperçu quand on partage le lien -->
 <meta property="og:title" content="Alexandre Romanini, élève ingénieur à l'INSA Rennes">
 <meta property="og:description" content="Élève ingénieur en informatique (option IA) à l'INSA Rennes, je travaille sur des projets d'IA, de réalité virtuelle et d'automatisation. Je cherche un stage de 2 mois entre juillet et septembre 2027.">
 <meta property="og:type" content="website">
@@ -15,372 +14,409 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --paper:  #F7F3EA;
-  --card:   #FFFDF8;
-  --ink:    #1F1D1A;
-  --soft:   #5E5850;
-  --faint:  #8A8274;
-  --rule:   #E2DACB;
-  --pen:    #2F4FA8;   /* bleu stylo, la seule couleur vive */
-  --mark:   #FBE6A2;   /* surligneur */
+  --paper: #F4F1EA;
+  --ink:   #1C1B19;
+  --soft:  #5D5A53;
+  --faint: #8C877C;
+  --rule:  #DDD7CA;
+  --panel: #E9E4D8;
+  --pen:   #2F4FA8;
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --hand:  "Caveat", "Segoe Print", "Bradley Hand", cursive;
-  --mono:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --display: "Fraunces", Georgia, serif;
+  --body:    "Public Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.125rem;
+  font-family: var(--body);
+  font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap {
-  width: min(70rem, 100% - 3rem);
-  margin-inline: auto;
-}
+.wrap { width: min(72rem, 100% - 3rem); margin-inline: auto; }
 
-a {
-  color: var(--pen);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-a:hover { text-decoration-thickness: 2px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-radius: 2px; }
 
-:focus-visible {
-  outline: 2px solid var(--pen);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 20; background: var(--paper); padding: .5rem .9rem; border: 1px solid var(--ink); }
 
-.skip {
-  position: absolute;
-  left: -999px;
-}
-.skip:focus {
-  left: 1rem;
-  top: 1rem;
+/* ---------- Barre du haut ---------- */
+
+.top {
+  position: sticky;
+  top: 0;
   z-index: 10;
-  background: var(--card);
-  padding: .5rem .9rem;
-  border: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
 }
-
-/* Mot surligné, comme au feutre */
-mark {
-  background: linear-gradient(transparent 55%, var(--mark) 55%, var(--mark) 92%, transparent 92%);
-  color: inherit;
-  padding: 0 .1em;
+.top .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.75rem;
 }
-
-.note {
-  font-family: var(--hand);
-  font-size: 1.45rem;
-  line-height: 1.1;
-  color: var(--pen);
-}
+.top .name { font-family: var(--display); font-size: 1.25rem; text-decoration: none; }
+.top nav { display: flex; gap: 1.75rem; font-size: .9rem; }
+.top nav a { text-decoration: none; color: var(--soft); }
+.top nav a:hover { color: var(--ink); }
 
 /* ---------- En-tête ---------- */
 
-.hero { padding-block: clamp(3.5rem, 10vw, 6rem) 2.5rem; }
-
-.hello {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1.75rem;
-}
-
-/* Pour mettre ta photo : remplace le <span class="avatar">AR</span> par
-   <img class="avatar" src="photo.jpg" alt="Alexandre Romanini"> */
-.avatar {
-  flex: none;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  object-fit: cover;
+.hero { padding-block: clamp(3.5rem, 9vw, 6.5rem) 0; }
+.hero .wrap {
   display: grid;
-  place-items: center;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  font-family: var(--hand);
-  font-size: 1.9rem;
-  color: var(--pen);
-  transform: rotate(-4deg);
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: end;
 }
-
-.hello .note { transform: rotate(-2deg); }
 
 h1 {
   margin: 0;
-  max-width: 22ch;
-  font-weight: 600;
-  font-size: clamp(2.1rem, 5vw, 3.6rem);
-  line-height: 1.08;
-  letter-spacing: -.01em;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  line-height: .95;
+  letter-spacing: -.02em;
 }
 
-.intro { max-width: 60ch; }
-.intro p { margin: 1rem 0 0; color: var(--soft); }
-.intro p:first-child { margin-top: 1.25rem; }
-
-.links {
+.tagline {
   margin: 1.75rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem 1.5rem;
-  font-family: var(--mono);
-  font-size: .85rem;
+  max-width: 34ch;
+  font-size: 1.2rem;
+  color: var(--soft);
 }
+
+.actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .75rem 1.75rem; }
+.actions a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.actions a:hover { color: var(--pen); border-color: var(--pen); }
+
+/* Pour ta photo : dépose photo.jpg à côté de ce fichier. Sans photo, les initiales s'affichent. */
+.portrait {
+  justify-self: end;
+  width: min(100%, 20rem);
+  aspect-ratio: 4 / 5;
+  background: var(--panel);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: var(--display);
+  font-size: 4rem;
+  color: var(--faint);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+
+.facts {
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+  padding: 1.5rem 0;
+  border-block: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.facts dt { font-size: .8rem; color: var(--faint); margin-bottom: .25rem; }
+.facts dd { margin: 0; font-size: .98rem; }
 
 /* ---------- Sections ---------- */
 
-.section { padding-block: 3rem; border-top: 1px dashed var(--rule); }
+.section { padding-block: clamp(4rem, 9vw, 6.5rem); }
 
-/* Sur grand écran : titre de section dans la marge gauche, contenu à droite */
-@media (min-width: 52rem) {
-  .section .wrap {
-    display: grid;
-    grid-template-columns: 13rem 1fr;
-    column-gap: 3rem;
-  }
-  .section .wrap > * { grid-column: 2; }
-  .section .wrap > h2 { grid-column: 1; grid-row: 1 / span 3; }
-}
-
+.section-head { margin-bottom: 3rem; max-width: 40rem; }
 h2 {
-  margin: 0 0 1.5rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -.01em;
 }
-
-.lead { margin: -.75rem 0 1.75rem; color: var(--soft); font-style: italic; }
-
-.now p { margin: 0 0 1rem; max-width: 62ch; color: var(--soft); }
-.now p strong { color: var(--ink); font-weight: 600; }
+.section-head p { margin: .75rem 0 0; color: var(--soft); }
 
 /* ---------- Projets ---------- */
 
-.projects {
+.work { list-style: none; margin: 0; padding: 0; }
+
+.work > li {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+.work > li:nth-child(even) .visual { order: 2; }
+
+.visual {
+  aspect-ratio: 16 / 10;
+  background: var(--panel);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.visual.contain img { object-fit: contain; background: #fff; }
+
+/* Visuel typographique pour les projets sans capture */
+.visual .stand-in {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.15;
+  color: var(--soft);
+  text-align: center;
+  padding: 2rem;
+}
+
+.kind { font-size: .8rem; color: var(--faint); margin: 0 0 .5rem; }
+.work h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  line-height: 1.1;
+}
+.work p.story { margin: .9rem 0 0; color: var(--soft); max-width: 40ch; }
+.work .metric { margin: 1rem 0 0; font-size: .9rem; font-weight: 500; }
+.work .stack { margin: .9rem 0 0; font-size: .82rem; color: var(--faint); }
+.work .open {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-weight: 500;
+  font-size: .95rem;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  color: var(--pen);
+}
+
+/* ---------- Développés avec l'IA ---------- */
+
+.tools {
+  list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+.tools li { border-top: 1px solid var(--ink); padding-top: 1rem; }
+.tools h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.45rem; }
+.tools h3 a { text-decoration: none; }
+.tools h3 a:hover { color: var(--pen); }
+.tools p { margin: .5rem 0 0; color: var(--soft); font-size: .97rem; }
+.tools .stack { font-size: .82rem; color: var(--faint); }
+
+/* ---------- Méthode ---------- */
+
+.principles {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 2rem 1.75rem;
-  align-items: start;
-}
-
-.project {
-  position: relative;
-  padding: 1.4rem 1.5rem 1.5rem;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  box-shadow: 0 1px 0 var(--rule), 0 8px 20px -14px rgba(60, 45, 20, .35);
-}
-
-/* Légère inclinaison alternée, comme des fiches posées sur un bureau */
-.project:nth-child(odd)  { transform: rotate(-.35deg); }
-.project:nth-child(even) { transform: rotate(.3deg); }
-
-.tag {
-  position: absolute;
-  top: -.9rem;
-  right: 1.25rem;
-  padding: 0 .4rem;
-  background: var(--paper);
-  font-family: var(--hand);
-  font-size: 1.3rem;
-  color: var(--pen);
-  transform: rotate(2deg);
-}
-
-.project h3 {
   margin: 0;
-  font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 1.25;
-}
-.project h3 a { color: var(--ink); text-decoration: none; }
-.project h3 a:hover { text-decoration: underline; text-decoration-color: var(--pen); }
-
-.project p { margin: .5rem 0 0; color: var(--soft); }
-
-.stack {
-  margin: .9rem 0 0;
-  font-family: var(--mono);
-  font-size: .78rem;
-  color: var(--faint);
-}
-.stack span + span::before { content: " · "; }
-
-.project-links {
-  margin: .8rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  font-family: var(--mono);
-  font-size: .82rem;
-}
-
-/* ---------- Outils ---------- */
-
-.skills { margin: 0; }
-.skills div {
+  padding: 0;
   display: grid;
-  grid-template-columns: 9.5rem 1fr;
-  gap: 1rem;
-  padding: .6rem 0;
-  border-bottom: 1px dashed var(--rule);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
 }
-.skills dt { font-style: italic; color: var(--faint); }
+.principles h3 { margin: 0 0 .5rem; font-family: var(--display); font-weight: 400; font-size: 1.45rem; }
+.principles p { margin: 0; color: var(--soft); }
+
+/* ---------- Parcours ---------- */
+
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 7rem 15rem 1fr;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.timeline .when { color: var(--faint); font-variant-numeric: tabular-nums; }
+.timeline .what { font-weight: 600; }
+.timeline .detail { color: var(--soft); }
+
+/* ---------- Compétences ---------- */
+
+.skills { margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.skills dt { font-size: .8rem; color: var(--faint); margin-bottom: .4rem; }
 .skills dd { margin: 0; }
 
-/* ---------- Pied de page ---------- */
+/* ---------- Contact ---------- */
 
-.footer {
-  padding-block: 3rem 4rem;
-  border-top: 1px dashed var(--rule);
-  color: var(--soft);
+.contact { padding-block: clamp(4rem, 9vw, 6.5rem); border-top: 1px solid var(--rule); }
+.contact h2 { max-width: 16ch; }
+.contact .mail {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 3.2vw, 2rem);
+  color: var(--pen);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
-.footer .note { display: block; margin-bottom: .4rem; }
+.contact .others { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; color: var(--soft); }
 
-/* ---------- Mobile ---------- */
+footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
+
+/* ---------- Petits écrans ---------- */
+
+@media (max-width: 52rem) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .portrait { justify-self: start; width: 12rem; }
+  .work > li { grid-template-columns: 1fr; }
+  .work > li:nth-child(even) .visual { order: 0; }
+  .principles { grid-template-columns: 1fr; gap: 1.75rem; }
+  .skills { grid-template-columns: repeat(2, 1fr); }
+  .timeline li { grid-template-columns: 5rem 1fr; }
+  .timeline .detail { grid-column: 2; }
+}
 
 @media (max-width: 36rem) {
   .wrap { width: calc(100% - 2rem); }
-  .projects { grid-template-columns: 1fr; }
-  .project:nth-child(n) { transform: none; }
-  .skills div { grid-template-columns: 1fr; gap: .1rem; }
+  .top nav { gap: 1rem; }
+  .top nav a.optional { display: none; }
+  .facts { grid-template-columns: 1fr; gap: 1rem; }
+  .skills { grid-template-columns: 1fr; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 
 <body>
 <a class="skip" href="#projets">Aller aux projets</a>
 
-<header class="hero">
+<header class="top">
   <div class="wrap">
-
-    <div class="hello">
-      <span class="avatar" aria-hidden="true">AR</span>
-      <span class="note">Salut !</span>
-    </div>
-
-    <h1>Je m'appelle Alexandre, et je m'intéresse à l'<mark>IA</mark>, à la <mark>réalité virtuelle</mark> et à l'<mark>automatisation</mark>.</h1>
-
-    <div class="intro">
-      <p>
-        J'ai 21 ans et je suis en 2e année d'informatique (option IA) à l'INSA Rennes.
-        Je cherche un stage technique de 2 mois entre juillet et septembre 2027.
-      </p>
-      <p>
-        De février à juin 2027, je suis au Brésil pour ma mobilité internationale, à l'UFSC.
-      </p>
-    </div>
-
-    <ul class="links">
-      <li><a href="https://github.com/alexandreromanini">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/alexandre-romanini-308522364">LinkedIn</a></li>
-      <li><a href="mailto:alexandreromanini35@protonmail.com">Email</a></li>
-      <li><a href="cv.pdf">CV (PDF)</a></li>
-    </ul>
-
+    <a class="name" href="#">Alexandre Romanini</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a>
+      <a class="optional" href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- ================= EN CE MOMENT ================= -->
-  <section class="section" id="maintenant">
-    <div class="wrap now">
-      <h2>En ce moment</h2>
-      <p>
-        <strong>Je travaille sur C-XAI</strong>, un projet qui explique les décisions d'un
-        réseau de neurones à l'aide de concepts compréhensibles par l'humain. En parallèle,
-        j'apprends le portugais avant de partir au Brésil.
-      </p>
-      <p>
-        Vous pouvez me poser des questions sur l'apprentissage par renforcement (PPO),
-        la planification, Unreal Engine 5 ou l'automatisation avec n8n.
-      </p>
+  <!-- ================= EN-TÊTE ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Alexandre<br>Romanini</h1>
+        <p class="tagline">
+          Élève ingénieur en informatique à l'INSA Rennes. Je construis des agents
+          qui apprennent, des humains virtuels et des outils qui tournent tout seuls.
+        </p>
+        <div class="actions">
+          <a href="cv.pdf">Télécharger le CV</a>
+          <a href="#projets">Voir les projets</a>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <img src="photo.jpg" alt="Alexandre Romanini" onerror="this.parentNode.textContent = 'AR';">
+      </div>
+    </div>
+
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt>Je cherche</dt><dd>Un stage technique de 2 mois, juillet à septembre 2027</dd></div>
+        <div><dt>Février à juin 2027</dt><dd>Mobilité à l'UFSC, au Brésil</dd></div>
+        <div><dt>Basé à</dt><dd>Rennes, France</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- ================= PROJETS ================= -->
   <section class="section" id="projets">
     <div class="wrap">
-      <h2>Projets à regarder en priorité</h2>
+      <div class="section-head">
+        <h2>Projets choisis</h2>
+        <p>Ce que j'ai construit, et ce que chaque projet m'a appris.</p>
+      </div>
 
-      <ol class="projects">
+      <ol class="work">
 
-        <li class="project">
-          <span class="tag">en cours</span>
-          <h3>C-XAI</h3>
-          <p>
-            Explication des décisions d'un réseau de neurones par des concepts
-            compréhensibles par l'humain.
-          </p>
-          <p class="stack"><span>Python</span><span>PyTorch</span></p>
+        <li>
+          <div class="visual contain">
+            <img src="https://github.com/alexandreromanini/DoodleJumpAgent/raw/main/assets/demo.gif" alt="Le planificateur joue à Doodle Jump" loading="lazy">
+          </div>
+          <div>
+            <p class="kind">Apprentissage par renforcement</p>
+            <h3>Doodle Jump Agent</h3>
+            <p class="story">
+              J'ai branché deux agents sur un Doodle Jump existant sans toucher à ses règles :
+              un planificateur qui simule la physique exacte du jeu, et un agent PPO qui apprend
+              sans la connaître. Le planificateur gagne d'un facteur 9, et j'ai cherché pourquoi.
+            </p>
+            <p class="metric">101 k de score moyen · 23× un agent aléatoire</p>
+            <p class="stack">Python · Gymnasium · Stable-Baselines3 · PyTorch · NumPy</p>
+            <a class="open" href="https://github.com/alexandreromanini/DoodleJumpAgent">Voir le projet</a>
+          </div>
         </li>
 
-        <li class="project">
-          <span class="tag">perso</span>
-          <h3><a href="https://github.com/alexandreromanini/DoodleJumpAgent">Doodle Jump Agent</a></h3>
-          <p>
-            Un planificateur qui simule la physique exacte du jeu (101 k de moyenne,
-            23× l'aléatoire), comparé à un agent PPO (12 k), sur un jeu tiers aux
-            règles inchangées.
-          </p>
-          <p class="stack">
-            <span>Python</span><span>Gymnasium</span><span>Stable-Baselines3</span><span>PyTorch</span><span>NumPy</span><span>Pygame</span>
-          </p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/DoodleJumpAgent">Code source</a>
-          </p>
+        <li>
+          <div class="visual">
+            <!-- Ajoute une capture : <img src="images/vr.jpg" alt="Le MetaHuman en VR"> -->
+            <p class="stand-in">Regard extraverti<br>ou introverti</p>
+          </div>
+          <div>
+            <p class="kind">Réalité virtuelle · projet d'école, équipe de 5</p>
+            <h3>Agent virtuel piloté par le regard</h3>
+            <p class="story">
+              Un humain virtuel avec qui l'on converse en VR, et dont le regard exprime une
+              personnalité grâce à l'eye-tracking. J'ai intégré le plugin ConvAI pour le lip sync
+              et développé le comportement de regard extraverti.
+            </p>
+            <p class="stack">Unreal Engine 5 · Blueprints · MetaHuman · SteamVR</p>
+            <a class="open" href="https://github.com/alexandreromanini/VR-Gaze-Agent">Voir la présentation</a>
+          </div>
         </li>
 
-        <li class="project">
-          <span class="tag">projet d'école</span>
-          <h3><a href="https://github.com/alexandreromanini/VR-Gaze-Agent">Interactions par le regard en VR</a></h3>
-          <p>Humains virtuels réagissant au regard de l'utilisateur.</p>
-          <p class="stack"><span>Unreal Engine 5</span><span>C++</span><span>Blueprints</span></p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/VR-Gaze-Agent">Présentation du projet</a>
-          </p>
+        <li>
+          <div class="visual">
+            <p class="stand-in">France Travail · Adzuna<br>Inria · Greenhouse · Lever</p>
+          </div>
+          <div>
+            <p class="kind">Automatisation · perso</p>
+            <h3>Veille automatisée d'offres de stage</h3>
+            <p class="story">
+              Je perdais du temps à rouvrir les mêmes sites, alors un script le fait pour moi.
+              Avant de coder, j'ai lu les robots.txt et les CGU de chaque site, et construit le
+              projet autour d'API officielles.
+            </p>
+            <p class="metric">Récapitulatif hebdomadaire par mail, sans doublons</p>
+            <p class="stack">Python · SQLite · systemd</p>
+            <a class="open" href="https://github.com/alexandreromanini/veille-stages">Voir le projet</a>
+          </div>
         </li>
 
-        <li class="project">
-          <span class="tag">perso</span>
-          <h3><a href="https://github.com/alexandreromanini/veille-stages">Veille automatisée d'offres de stage</a></h3>
-          <p>
-            Agrégation de plusieurs sources d'offres (France Travail, Adzuna, Inria,
-            sites carrières), filtrage, anti-doublons et récapitulatif hebdomadaire par mail.
-          </p>
-          <p class="stack"><span>Python</span><span>SQLite</span><span>systemd</span></p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/veille-stages">Code source</a>
-          </p>
+        <li>
+          <div class="visual">
+            <p class="stand-in">Pourquoi le réseau<br>a-t-il décidé ça ?</p>
+          </div>
+          <div>
+            <p class="kind">IA explicable · en cours</p>
+            <h3>C-XAI</h3>
+            <p class="story">
+              Expliquer les décisions d'un réseau de neurones à l'aide de concepts
+              compréhensibles par l'humain.
+            </p>
+            <p class="stack">Python · PyTorch</p>
+          </div>
         </li>
 
       </ol>
@@ -390,82 +426,103 @@ h2 {
   <!-- ================= DÉVELOPPÉS AVEC L'IA ================= -->
   <section class="section" id="avec-ia">
     <div class="wrap">
-      <h2>Développés avec l'IA</h2>
-      <p class="lead">
-        J'en avais assez de payer des logiciels Windows pour des fonctions basiques,
-        alors je les ai recodés.
-      </p>
+      <div class="section-head">
+        <h2>Développés avec l'IA</h2>
+        <p>J'en avais assez de payer des logiciels Windows pour des fonctions basiques, alors je les ai recodés.</p>
+      </div>
 
-      <ol class="projects">
-
-        <li class="project">
-          <span class="tag">Windows</span>
+      <ul class="tools">
+        <li>
           <h3><a href="https://github.com/alexandreromanini/PDFManager">PDFManager</a></h3>
-          <p>
-            Éditeur PDF gratuit et hors ligne, pensé pour remplacer Acrobat Pro :
-            édition, annotations, signatures numériques, OCR, traduction DeepL et
-            assistant IA local. Installeur et mises à jour automatiques.
-          </p>
-          <p class="stack">
-            <span>Python</span><span>PySide6 (Qt)</span><span>PyMuPDF</span><span>llama.cpp</span>
-          </p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/PDFManager/releases/latest">Télécharger</a>
-            <a href="https://github.com/alexandreromanini/PDFManager">Code source</a>
-          </p>
+          <p>Éditeur PDF gratuit et hors ligne, pensé pour remplacer Acrobat Pro : annotations, signatures numériques, OCR, traduction DeepL et assistant IA local.</p>
+          <p class="stack">Python · PySide6 · PyMuPDF · llama.cpp</p>
         </li>
-
-        <li class="project">
-          <span class="tag">Windows</span>
+        <li>
           <h3><a href="https://github.com/alexandreromanini/PDFManager-rs">PDFManager-rs</a></h3>
-          <p>
-            Le même logiciel réécrit en Rust, avec un installeur 6× plus léger et un
-            démarrage plus rapide.
-          </p>
-          <p class="stack"><span>Rust</span><span>Slint</span><span>MuPDF</span></p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/PDFManager-rs">Code source</a>
-          </p>
+          <p>Le même logiciel réécrit en Rust, avec un installeur 6× plus léger et un démarrage plus rapide.</p>
+          <p class="stack">Rust · Slint · MuPDF</p>
         </li>
-
-        <li class="project">
-          <span class="tag">Windows</span>
+        <li>
           <h3><a href="https://github.com/alexandreromanini/CleanLite">CleanLite</a></h3>
-          <p>
-            Nettoyeur Windows prudent inspiré de CCleaner, avec une liste blanche stricte
-            des chemins et un mode simulation par défaut. Il gère aussi les programmes au
-            démarrage, analyse le disque et détecte les doublons.
-          </p>
-          <p class="stack"><span>Python</span><span>tkinter</span><span>PowerShell</span></p>
-          <p class="project-links">
-            <a href="https://github.com/alexandreromanini/CleanLite">Code source</a>
-          </p>
+          <p>Nettoyeur Windows prudent inspiré de CCleaner, avec une liste blanche stricte des chemins et un mode simulation par défaut.</p>
+          <p class="stack">Python · tkinter · PowerShell</p>
         </li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- ================= MÉTHODE ================= -->
+  <section class="section" id="methode">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Comment je travaille</h2>
+      </div>
+
+      <ul class="principles">
+        <li>
+          <h3>Comprendre avant de coder</h3>
+          <p>J'ai analysé la physique de Doodle Jump avant d'écrire le moindre agent, et lu les règles de chaque site avant d'automatiser ma veille.</p>
+        </li>
+        <li>
+          <h3>Vérifier plutôt que supposer</h3>
+          <p>Un test rejoue chaque partie frame par frame pour prouver que mes modifications ne changent pas le jeu.</p>
+        </li>
+        <li>
+          <h3>Garder ce qui échoue</h3>
+          <p>Mes README notent aussi ce qui n'a pas marché, et pourquoi. C'est souvent là que j'apprends le plus.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= PARCOURS ================= -->
+  <section class="section" id="parcours">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Parcours</h2>
+      </div>
+
+      <ol class="timeline">
+        <li><span class="when">2023</span><span class="what">Bac Maths / NSI</span><span class="detail">Option maths expertes, mention très bien.</span></li>
+        <li><span class="when">2023</span><span class="what">Prépa intégrée ESIR</span><span class="detail">Deux ans de bases scientifiques.</span></li>
+        <li><span class="when">2025</span><span class="what">INSA Rennes</span><span class="detail">Cycle ingénieur en informatique, option IA.</span></li>
+        <li><span class="when">2027</span><span class="what">UFSC, Brésil</span><span class="detail">Mobilité internationale de février à juin.</span></li>
       </ol>
     </div>
   </section>
 
-  <!-- ================= OUTILS ================= -->
+  <!-- ================= COMPÉTENCES ================= -->
   <section class="section" id="competences">
     <div class="wrap">
-      <h2>Outils du quotidien</h2>
-
+      <div class="section-head">
+        <h2>Outils du quotidien</h2>
+      </div>
       <dl class="skills">
-        <div><dt>Langages</dt><dd>Python, Java, C/C++, SQL</dd></div>
-        <div><dt>IA</dt><dd>PyTorch, Stable-Baselines3, Gymnasium</dd></div>
-        <div><dt>Réalité virtuelle</dt><dd>Unreal Engine 5, Unity, SteamVR</dd></div>
-        <div><dt>Outils</dt><dd>Git, Linux, n8n</dd></div>
+        <div><dt>Langages</dt><dd>Python, Java, C, C++</dd></div>
+        <div><dt>IA</dt><dd>PyTorch, Stable-Baselines3, Gymnasium, NumPy</dd></div>
+        <div><dt>Réalité virtuelle</dt><dd>Unreal Engine 5, MetaHuman, Unity, SteamVR</dd></div>
+        <div><dt>Outils</dt><dd>Git, Linux, Bash, n8n</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Une offre de stage, une question ?</h2>
+      <a class="mail" href="mailto:alexandreromanini35@protonmail.com">alexandreromanini35@protonmail.com</a>
+      <div class="others">
+        <a href="https://github.com/alexandreromanini">GitHub</a>
+        <a href="https://www.linkedin.com/in/alexandre-romanini-308522364">LinkedIn</a>
+        <a href="cv.pdf">CV (PDF)</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="wrap footer">
-  <span class="note">Une question, une offre de stage ?</span>
-  Écrivez-moi : <a href="mailto:alexandreromanini35@protonmail.com">alexandreromanini35@protonmail.com</a>
-  <br>Alexandre Romanini · Rennes, France
+<footer>
+  <div class="wrap">Alexandre Romanini · Rennes, France</div>
 </footer>
 
 </body>
