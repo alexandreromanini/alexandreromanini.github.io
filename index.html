@@ -78,7 +78,7 @@ a { color: inherit; }
 /* ---------- En-tête ---------- */
 
 .hero { padding-block: clamp(3.5rem, 9vw, 6.5rem) 0; }
-.hero .wrap {
+.hero .wrap:first-child {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 3rem;
@@ -135,6 +135,10 @@ h1 {
 }
 .facts dt { font-size: .8rem; color: var(--faint); margin-bottom: .25rem; }
 .facts dd { margin: 0; font-size: .98rem; }
+/* SVG plutôt qu'un emoji : les drapeaux emoji s'affichent en « BR » sous Windows */
+.flag { width: 1.4em; height: 1em; vertical-align: -.12em; margin-left: .3em; }
+/* Trait vertical entre les trois colonnes */
+.facts > div + div { border-left: 1px solid var(--rule); padding-left: 1.5rem; }
 /* La recherche de stage ressort parmi les trois infos */
 .facts .seeking { padding-left: 1rem; border-left: 3px solid var(--pen); }
 .facts .seeking dt { color: var(--pen); font-weight: 600; }
@@ -310,6 +314,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
   .top nav { gap: 1rem; }
   .top nav a.optional { display: none; }
   .facts { grid-template-columns: 1fr; gap: 1rem; }
+  .facts > div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1rem; }
   .skills { grid-template-columns: 1fr; }
 }
 
@@ -357,7 +362,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
     <div class="wrap">
       <dl class="facts">
         <div class="seeking"><dt>Je cherche</dt><dd>Un stage technique de 2 mois, de juillet à septembre 2027</dd></div>
-        <div><dt>Février à juin 2027</dt><dd>Mobilité à l'UFSC, au Brésil</dd></div>
+        <div><dt>Février à juin 2027</dt><dd>Mobilité à l'UFSC, au Brésil <svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#009C3B"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#FFDF00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/></svg></dd></div>
         <div><dt>Basé à</dt><dd>Rennes, France</dd></div>
       </dl>
     </div>
@@ -397,7 +402,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
           </div>
           <div>
             <p class="kind">Réalité virtuelle, projet d'école en équipe de 5</p>
-            <h3>Développer des interactions naturelles  grâce au regard avec un agent virtuel en VR</h3>
+            <h3>Agent virtuel piloté par le regard</h3>
             <p class="story">
               Un humain virtuel avec qui l'on converse en VR, et dont le regard exprime une
               personnalité grâce à l'eye-tracking. J'ai intégré le plugin ConvAI pour le lip sync
