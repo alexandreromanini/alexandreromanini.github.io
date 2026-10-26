@@ -201,6 +201,18 @@ figure.visual figcaption { font-size: .75rem; color: var(--faint); text-align: c
 .work p.story { margin: .9rem 0 0; color: var(--soft); max-width: 40ch; }
 .work .metric { margin: 1rem 0 0; font-size: .9rem; font-weight: 500; }
 .work .stack { margin: .9rem 0 0; font-size: .82rem; color: var(--faint); }
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: .5rem;
+  padding: .2rem .6rem;
+  border: 1px solid var(--pen);
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--pen);
+}
 .open {
   display: inline-block;
   margin-top: 1.1rem;
@@ -323,8 +335,9 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
       <div>
         <h1>Alexandre<br>Romanini</h1>
         <p class="tagline">
-          Élève ingénieur en informatique à l'INSA Rennes. Je construis des agents
-          qui apprennent, des humains virtuels et des outils qui tournent tout seuls.
+          Élève ingénieur en informatique à l'INSA Rennes. Ces derniers mois, j'ai fait
+          jouer un agent à Doodle Jump, parler un humain virtuel en VR, et écrit des
+          scripts qui font mes corvées à ma place.
         </p>
         <div class="actions">
           <a href="cv.pdf">Télécharger le CV</a>
@@ -351,7 +364,6 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
     <div class="wrap">
       <div class="section-head">
         <h2>Projets choisis</h2>
-        <p>Ce que j'ai construit, et ce que chaque projet m'a appris.</p>
       </div>
 
       <ol class="work">
@@ -368,8 +380,8 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
               un planificateur qui simule la physique exacte du jeu, et un agent PPO qui apprend
               sans la connaître. Le planificateur gagne d'un facteur 9, et j'ai cherché pourquoi.
             </p>
-            <p class="metric">101 k de score moyen · 23× un agent aléatoire</p>
-            <p class="stack">Python · Gymnasium · Stable-Baselines3 · PyTorch · NumPy</p>
+            <p class="metric">101 k de score moyen, soit 23 fois un agent aléatoire</p>
+            <p class="stack">Python, Gymnasium, Stable-Baselines3, PyTorch, NumPy</p>
             <a class="open" href="https://github.com/alexandreromanini/DoodleJumpAgent">Voir le projet</a>
           </div>
         </li>
@@ -380,14 +392,14 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
 
           </div>
           <div>
-            <p class="kind">Réalité virtuelle · projet d'école, équipe de 5</p>
+            <p class="kind">Réalité virtuelle, projet d'école en équipe de 5</p>
             <h3>Agent virtuel piloté par le regard</h3>
             <p class="story">
               Un humain virtuel avec qui l'on converse en VR, et dont le regard exprime une
               personnalité grâce à l'eye-tracking. J'ai intégré le plugin ConvAI pour le lip sync
               et développé le comportement de regard extraverti.
             </p>
-            <p class="stack">Unreal Engine 5 · Blueprints · MetaHuman · SteamVR</p>
+            <p class="stack">Unreal Engine 5, Blueprints, MetaHuman, SteamVR</p>
             <a class="open" href="https://github.com/alexandreromanini/VR-Gaze-Agent">Voir la présentation</a>
           </div>
         </li>
@@ -397,7 +409,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
             <img src="images/veille.png" alt="Exemple de récapitulatif d'offres de stage généré par la veille automatisée" loading="lazy">
           </div>
           <div>
-            <p class="kind">Automatisation · perso</p>
+            <p class="kind">Automatisation, projet perso</p>
             <h3>Veille automatisée d'offres de stage</h3>
             <p class="story">
               Je perdais du temps à rouvrir les mêmes sites, alors un script le fait pour moi.
@@ -405,7 +417,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
               projet autour d'API officielles.
             </p>
             <p class="metric">Récapitulatif hebdomadaire par mail, sans doublons</p>
-            <p class="stack">Python · SQLite · systemd</p>
+            <p class="stack">Python, SQLite, systemd</p>
             <a class="open" href="https://github.com/alexandreromanini/veille-stages">Voir le projet</a>
           </div>
         </li>
@@ -416,13 +428,13 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
             <figcaption>Illustration : Ribeiro et al., « Why Should I Trust You? », 2016</figcaption>
           </figure>
           <div>
-            <p class="kind">IA explicable · en cours</p>
-            <h3>C-XAI</h3>
+            <p class="kind">IA explicable</p>
+            <h3>C-XAI <span class="badge">En cours</span></h3>
             <p class="story">
               Expliquer les décisions d'un réseau de neurones à l'aide de concepts
               compréhensibles par l'humain.
             </p>
-            <p class="stack">Python · PyTorch</p>
+            <p class="stack">Python, PyTorch</p>
           </div>
         </li>
 
@@ -442,19 +454,19 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
         <li>
           <h3>PDFManager</h3>
           <p>Éditeur PDF gratuit et hors ligne, pensé pour remplacer Acrobat Pro : annotations, signatures numériques, OCR, traduction DeepL et assistant IA local.</p>
-          <p class="stack">Python · PySide6 · PyMuPDF · llama.cpp</p>
+          <p class="stack">Python, PySide6, PyMuPDF, llama.cpp</p>
           <a class="open" href="https://github.com/alexandreromanini/PDFManager">Voir le projet</a>
         </li>
         <li>
           <h3>PDFManager-rs</h3>
           <p>Le même logiciel réécrit en Rust, avec un installeur 6× plus léger et un démarrage plus rapide.</p>
-          <p class="stack">Rust · Slint · MuPDF</p>
+          <p class="stack">Rust, Slint, MuPDF</p>
           <a class="open" href="https://github.com/alexandreromanini/PDFManager-rs">Voir le projet</a>
         </li>
         <li>
           <h3>CleanLite</h3>
           <p>Nettoyeur Windows prudent inspiré de CCleaner, avec une liste blanche stricte des chemins et un mode simulation par défaut.</p>
-          <p class="stack">Python · tkinter · PowerShell</p>
+          <p class="stack">Python, tkinter, PowerShell</p>
           <a class="open" href="https://github.com/alexandreromanini/CleanLite">Voir le projet</a>
         </li>
       </ul>
@@ -474,12 +486,12 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
           <p>J'ai analysé la physique de Doodle Jump avant d'écrire le moindre agent, et lu les règles de chaque site avant d'automatiser ma veille.</p>
         </li>
         <li>
-          <h3>Vérifier plutôt que supposer</h3>
+          <h3>Prouver que ça marche</h3>
           <p>Un test rejoue chaque partie frame par frame pour prouver que mes modifications ne changent pas le jeu.</p>
         </li>
         <li>
           <h3>Garder ce qui échoue</h3>
-          <p>Mes README notent aussi ce qui n'a pas marché, et pourquoi. C'est souvent là que j'apprends le plus.</p>
+          <p>Mes README notent aussi ce qui n'a pas marché, et pourquoi : par exemple, l'agent qui imitait le planificateur de Doodle Jump n'a jamais fait mieux que PPO seul.</p>
         </li>
       </ul>
     </div>
@@ -532,7 +544,7 @@ footer { padding-block: 2rem 3rem; color: var(--faint); font-size: .85rem; }
 </main>
 
 <footer>
-  <div class="wrap">Alexandre Romanini · Rennes, France</div>
+  <div class="wrap">Alexandre Romanini, Rennes, France</div>
 </footer>
 
 </body>
