@@ -4,19 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ==========================================================
-     À MODIFIER : tout ce qui est entre [crochets].
-     Cherchez les commentaires « MODIFIER » dans le fichier.
-     ========================================================== -->
-
-<title>Alexandre Romanini — Etudiant Ingénieur à l'INSA Rennes</title>
-<meta name="description" content="[Une phrase : ce que vous faites et pour qui. Ce texte s'affiche dans Google et sur les réseaux.]">
+<title>Alexandre Romanini — Élève ingénieur à l'INSA Rennes</title>
+<meta name="description" content="Élève ingénieur en informatique (option IA) à l'INSA Rennes. Projets en IA, réalité virtuelle et automatisation. Je cherche un stage de 2 mois entre juillet et septembre 2027.">
 
 <!-- Aperçu quand on partage le lien -->
-<meta property="og:title" content="Alexandre Romanini — Etudiant Ingénieur à l'INSA Rennes">
-<meta property="og:description" content="[La même phrase que ci-dessus.]">
+<meta property="og:title" content="Alexandre Romanini — Élève ingénieur à l'INSA Rennes">
+<meta property="og:description" content="Élève ingénieur en informatique (option IA) à l'INSA Rennes. Projets en IA, réalité virtuelle et automatisation. Je cherche un stage de 2 mois entre juillet et septembre 2027.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://[votrepseudo].github.io">
+<meta property="og:url" content="https://alexandreromanini.github.io">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,10 +107,11 @@ a { color: inherit; }
 
 .intro {
   margin: 2.25rem 0 0;
-  max-width: 48ch;
+  max-width: 52ch;
   color: var(--muted);
   font-size: 1.125rem;
 }
+.intro + .intro { margin-top: 1rem; }
 
 .links {
   margin: 2.5rem 0 0;
@@ -148,6 +144,36 @@ a { color: inherit; }
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.section-lead {
+  margin: -1.5rem 0 3rem;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+/* ---------- En ce moment ---------- */
+
+.now {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2.5rem;
+}
+.now p {
+  margin: 0;
+  max-width: 48ch;
+  color: var(--muted);
+}
+.now strong {
+  display: block;
+  margin-bottom: .5rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
 }
 
 /* ---------- Projets ---------- */
@@ -302,26 +328,22 @@ a { color: inherit; }
 <header class="hero">
   <div class="wrap">
 
-    <!-- MODIFIER : votre nom et votre intitulé -->
-    <p class="eyebrow">[Prénom Nom] <span>—</span> [Développeur front-end]</p>
+    <p class="eyebrow">Alexandre Romanini <span>—</span> Élève ingénieur, INSA Rennes</p>
 
-    <!-- MODIFIER : ce que vous construisez, en une phrase.
-         Le mot entre <em> ressort en ambre : choisissez-le bien. -->
-    <h1 class="statement">Je construis des <em>interfaces</em> claires et rapides.</h1>
+    <h1 class="statement">IA, réalité virtuelle et <em>automatisation</em>.</h1>
 
-    <!-- MODIFIER : deux ou trois lignes. Qui vous êtes, ce que vous
-         cherchez (alternance, stage, poste, freelance), où vous êtes. -->
     <p class="intro">
-      [Actuellement en formation à … , je cherche une alternance à partir de …
-      Je travaille surtout en JavaScript et je m'intéresse à l'accessibilité et
-      à la performance web.]
+      J'ai 21 ans et je suis en 2e année d'informatique (option IA) à l'INSA Rennes.
+      Je cherche un stage technique de 2 mois entre juillet et septembre 2027.
+    </p>
+    <p class="intro">
+      De février à juin 2027, je suis au Brésil pour ma mobilité internationale, à l'UFSC.
     </p>
 
-    <!-- MODIFIER : vos liens. Supprimez les lignes inutiles. -->
     <ul class="links">
-      <li><a href="https://github.com/[votrepseudo]">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/[votre-profil]">LinkedIn</a></li>
-      <li><a href="mailto:[vous@exemple.fr]">[vous@exemple.fr]</a></li>
+      <li><a href="https://github.com/alexandreromanini">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/alexandre-romanini-308522364">LinkedIn</a></li>
+      <li><a href="mailto:alexandreromanini35@protonmail.com">alexandreromanini35@protonmail.com</a></li>
       <li><a href="cv.pdf">CV (PDF)</a></li>
     </ul>
 
@@ -330,69 +352,176 @@ a { color: inherit; }
 
 <main>
 
+  <!-- ================= EN CE MOMENT ================= -->
+  <section class="section" id="maintenant">
+    <div class="wrap">
+      <h2 class="section-title">En ce moment</h2>
+
+      <div class="now">
+        <p>
+          <strong>Je travaille sur</strong>
+          C-XAI, un projet qui explique les décisions d'un réseau de neurones à l'aide
+          de concepts compréhensibles par l'humain. En parallèle, j'apprends le portugais
+          avant de partir au Brésil.
+        </p>
+        <p>
+          <strong>Posez-moi des questions sur</strong>
+          L'apprentissage par renforcement (PPO), la planification, Unreal Engine 5
+          ou l'automatisation avec n8n.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= PROJETS ================= -->
   <section class="section" id="projets">
     <div class="wrap">
-      <h2 class="section-title">Projets</h2>
+      <h2 class="section-title">Projets à regarder en priorité</h2>
 
       <ol class="projects">
 
-        <!-- MODIFIER : dupliquez ce bloc <li> pour chaque projet.
-             Mettez le plus impressionnant en premier, pas le plus récent. -->
         <li class="project">
-          <span class="project-year">2026</span>
+          <span class="project-year">En cours</span>
           <div>
-            <h3 class="project-title">
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
-            </h3>
+            <h3 class="project-title">C-XAI</h3>
             <p class="project-desc">
-              [Une ou deux phrases : à quoi ça sert et quel problème ça résout.
-              Dites ce que vous avez construit vous-même, pas ce que le
-              framework fait.]
+              Explication des décisions d'un réseau de neurones par des concepts
+              compréhensibles par l'humain.
             </p>
             <p class="stack">
-              <span>React</span><span>TypeScript</span><span>Vite</span>
-            </p>
-            <p class="project-links">
-              <a href="https://[votrepseudo].github.io/[nom-du-depot]/">Voir la démo</a>
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+              <span>Python</span><span>PyTorch</span>
             </p>
           </div>
         </li>
 
         <li class="project">
-          <span class="project-year">2025</span>
+          <span class="project-year">Perso</span>
           <div>
             <h3 class="project-title">
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
+              <a href="https://github.com/alexandreromanini/DoodleJumpAgent">Doodle Jump Agent</a>
             </h3>
             <p class="project-desc">
-              [Description du deuxième projet.]
+              Un planificateur qui simule la physique exacte du jeu (101 k de moyenne,
+              23× l'aléatoire), comparé à un agent PPO (12 k), sur un jeu tiers aux
+              règles inchangées.
             </p>
             <p class="stack">
-              <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+              <span>Python</span><span>Gymnasium</span><span>Stable-Baselines3</span><span>PyTorch</span><span>NumPy</span><span>Pygame</span>
             </p>
             <p class="project-links">
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+              <a href="https://github.com/alexandreromanini/DoodleJumpAgent">Code source</a>
             </p>
           </div>
         </li>
 
         <li class="project">
-          <span class="project-year">2025</span>
+          <span class="project-year">Académique</span>
           <div>
             <h3 class="project-title">
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">[Nom du projet]</a>
+              <a href="https://github.com/alexandreromanini/VR-Gaze-Agent">Interactions par le regard en VR</a>
             </h3>
             <p class="project-desc">
-              [Description du troisième projet.]
+              Humains virtuels réagissant au regard de l'utilisateur.
             </p>
             <p class="stack">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>Unreal Engine 5</span><span>C++</span><span>Blueprints</span>
             </p>
             <p class="project-links">
-              <a href="https://[votrepseudo].github.io/[nom-du-depot]/">Voir la démo</a>
-              <a href="https://github.com/[votrepseudo]/[nom-du-depot]">Code source</a>
+              <a href="https://github.com/alexandreromanini/VR-Gaze-Agent">Présentation du projet</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <span class="project-year">Perso</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/alexandreromanini/veille-stages">Veille automatisée d'offres de stage</a>
+            </h3>
+            <p class="project-desc">
+              Agrégation de plusieurs sources d'offres (France Travail, Adzuna, Inria,
+              sites carrières), filtrage, anti-doublons et récapitulatif hebdomadaire par mail.
+            </p>
+            <p class="stack">
+              <span>Python</span><span>SQLite</span><span>systemd</span>
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/alexandreromanini/veille-stages">Code source</a>
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= DÉVELOPPÉS AVEC L'IA ================= -->
+  <section class="section" id="avec-ia">
+    <div class="wrap">
+      <h2 class="section-title">Développés avec l'IA</h2>
+      <p class="section-lead">
+        J'en avais assez de payer des logiciels Windows pour des fonctions basiques,
+        alors je les ai recodés.
+      </p>
+
+      <ol class="projects">
+
+        <li class="project">
+          <span class="project-year">Windows</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/alexandreromanini/PDFManager">PDFManager</a>
+            </h3>
+            <p class="project-desc">
+              Éditeur PDF gratuit et hors ligne, pensé pour remplacer Acrobat Pro :
+              édition, annotations, signatures numériques, OCR, traduction DeepL et
+              assistant IA local. Installeur et mises à jour automatiques.
+            </p>
+            <p class="stack">
+              <span>Python</span><span>PySide6 (Qt)</span><span>PyMuPDF</span><span>llama.cpp</span>
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/alexandreromanini/PDFManager/releases/latest">Télécharger</a>
+              <a href="https://github.com/alexandreromanini/PDFManager">Code source</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <span class="project-year">Windows</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/alexandreromanini/PDFManager-rs">PDFManager-rs</a>
+            </h3>
+            <p class="project-desc">
+              Le même logiciel réécrit en Rust, avec un installeur 6× plus léger et un
+              démarrage plus rapide.
+            </p>
+            <p class="stack">
+              <span>Rust</span><span>Slint</span><span>MuPDF</span>
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/alexandreromanini/PDFManager-rs">Code source</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <span class="project-year">Windows</span>
+          <div>
+            <h3 class="project-title">
+              <a href="https://github.com/alexandreromanini/CleanLite">CleanLite</a>
+            </h3>
+            <p class="project-desc">
+              Nettoyeur Windows prudent inspiré de CCleaner, avec une liste blanche stricte
+              des chemins et un mode simulation par défaut. Il gère aussi les programmes au
+              démarrage, analyse le disque et détecte les doublons.
+            </p>
+            <p class="stack">
+              <span>Python</span><span>tkinter</span><span>PowerShell</span>
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/alexandreromanini/CleanLite">Code source</a>
             </p>
           </div>
         </li>
@@ -404,22 +533,24 @@ a { color: inherit; }
   <!-- ================= COMPÉTENCES ================= -->
   <section class="section" id="competences">
     <div class="wrap">
-      <h2 class="section-title">Compétences</h2>
+      <h2 class="section-title">Outils du quotidien</h2>
 
-      <!-- MODIFIER : ne listez que ce que vous savez vraiment utiliser.
-           Une liste courte et honnête vaut mieux qu'une liste longue. -->
       <dl class="skills">
         <div>
           <dt>Langages</dt>
-          <dd>[JavaScript, TypeScript, Python, SQL]</dd>
+          <dd>Python, Java, C/C++, SQL</dd>
         </div>
         <div>
-          <dt>Front-end</dt>
-          <dd>[React, CSS moderne, accessibilité, tests]</dd>
+          <dt>IA</dt>
+          <dd>PyTorch, Stable-Baselines3, Gymnasium</dd>
         </div>
         <div>
-          <dt>Back-end &amp; outils</dt>
-          <dd>[Node.js, PostgreSQL, Git, Docker]</dd>
+          <dt>Réalité virtuelle</dt>
+          <dd>Unreal Engine 5, Unity, SteamVR</dd>
+        </div>
+        <div>
+          <dt>Outils</dt>
+          <dd>Git, Linux, n8n</dd>
         </div>
       </dl>
     </div>
@@ -428,9 +559,8 @@ a { color: inherit; }
 </main>
 
 <footer class="wrap footer">
-  <p>Alexandre ROMANINI — Rennes, France</p>
-  <!-- MODIFIER : votre adresse e-mail -->
-  <p>Écrivez-moi : <a href="mailto:alexandreromanini35@protonmail.com">[alexandreromanini35@protonmail.com]</a></p>
+  <p>Alexandre Romanini — Rennes, France</p>
+  <p>Écrivez-moi : <a href="mailto:alexandreromanini35@protonmail.com">alexandreromanini35@protonmail.com</a></p>
 </footer>
 
 </body>
