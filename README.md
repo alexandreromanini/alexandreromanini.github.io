@@ -2,7 +2,7 @@
 
 J'ai 21 ans et je suis élève ingénieur en 2e année d'informatique (option IA) à l'INSA Rennes. Je m'intéresse surtout à l'intelligence artificielle, à la réalité virtuelle et à l'automatisation.
 
-**Je cherche un stage technique de 2 mois entre juillet et septembre 2027.** De février à juin 2027, je suis au Brésil pour ma mobilité internationale, à l'UFSC.
+**Je cherche un stage technique de 2 mois entre juillet et septembre 2027.** De février à Juillet 2027, je suis au Brésil pour ma mobilité internationale, à l'UFSC.
 
 Mon portfolio : [alexandreromanini.github.io](https://alexandreromanini.github.io)
 
